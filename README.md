@@ -1,8 +1,3 @@
-Below is a comprehensive README that covers setup instructions, API documentation, sample query examples, and testing guidelines with both cURL commands and Postman collection details.
-
----
-
-```markdown
 # Gen AI Analytics Mini Data Query Simulation Engine
 
 A lightweight backend service that simulates an AI-powered data query system. This tool empowers non-technical teams to ask complex business questions in natural language and receive data insights without direct dependency on the data team.
@@ -44,8 +39,8 @@ pip install fastapi uvicorn
 
 A sample `requirements.txt` file:
 ```
-fastapi>=0.68.0
-uvicorn>=0.15.0
+fastapi>=0.115.12
+uvicorn>=0.34.0
 ```
 
 ## Setup Instructions
@@ -53,8 +48,8 @@ uvicorn>=0.15.0
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/yourusername/gen-ai-analytics-simulation.git
-   cd gen-ai-analytics-simulation
+   git clone https://github.com/atharvaj1425/gg-genai-seudo-sql.git
+   cd gg-genai-seudo-sql
    ```
 
 2. **Install Dependencies:**
@@ -65,7 +60,7 @@ uvicorn>=0.15.0
 
 3. **Review the Code:**
 
-   - The main API implementation is in `main.py` (or your chosen filename).
+   - The main API implementation is in `gg.py`.
    - Authentication is implemented via a simple header-based token. The code expects an API key of `secret-token` (or use alias `api_key` if you update the header alias).
 
 4. **Database Setup:**
@@ -95,7 +90,7 @@ FastAPI automatically generates interactive API documentation. After starting th
 - **Description:** Converts a natural language query to a pseudo-SQL query and returns a simulated response.
 - **Request Header:**  
   - `Content-Type: application/json`
-  - `api_key: secret-token`
+  - `api-key: secret-token`
 - **Request Body Example:**
 
   ```json
@@ -229,7 +224,7 @@ Make sure your FastAPI server is running on `http://localhost:8000`.
 
 2. **Add Environment Variables (Optional):**
    - **baseUrl:** `http://localhost:8000`
-   - **api_key:** `secret-token`
+   - **api-key:** `secret-token`
 
 3. **Set Up Requests:**
 
@@ -238,7 +233,7 @@ Make sure your FastAPI server is running on `http://localhost:8000`.
      - **URL:** `{{baseUrl}}/query`
      - **Headers:** 
        - `Content-Type: application/json`
-       - `api_key: {{api_key}}`
+       - `api-key: {{api_key}}`
      - **Body (raw, JSON):**
        ```json
        {
@@ -284,5 +279,3 @@ Happy querying!
 ```
 
 ---
-
-This README provides all necessary details—from setting up the project and running the FastAPI server to detailed API documentation and testing instructions using both cURL and Postman. Feel free to customize it further based on your specific needs or project changes.
