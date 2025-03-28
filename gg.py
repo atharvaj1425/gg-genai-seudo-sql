@@ -56,6 +56,10 @@ class QueryResponse(BaseModel):
     pseudo_sql: str
     result: dict
 
+@app.get("/")
+def root():
+    return {"message": "Deployment successful"}
+
 @app.post("/query", response_model=QueryResponse)
 def query(query_request: QueryRequest, api_key: str = Depends(get_api_key)):
     """
